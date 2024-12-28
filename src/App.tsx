@@ -1,7 +1,9 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { Auth } from './components/Auth'
+// import { Auth } from './components/Auth'
+import { Route, Routes } from 'react-router'
+import { CollectionList } from './components/CollectionList'
 import QrCode from './components/QrCode'
 import './index.css'
 function App() {
@@ -10,8 +12,13 @@ function App() {
   return (
     <div className='max-w-2xl mx-auto p-4'>
     <h1 className="text-4xl font-bold text-center">Bookmark Manager</h1>
-    <Auth />
+    {/* <Auth /> */}
 
+    <Routes>
+      <Route path="/" element={<CollectionList onSelect={(c)=>console.log(c.created_at)}  />} />
+      <Route path="/:collection" element={<CollectionList onSelect={(c)=>console.log(c.created_at)}  />} />
+    </Routes>
+    
 
     <span className="text-center block mt-4">
       Built with{' '}

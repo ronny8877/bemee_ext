@@ -33,7 +33,7 @@ export function BookmarkList({ collection }: { collection: Collection }) {
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">{collection.name}</h2>
+      <h2 className="text-xl font-bold mb-4">{collection.title}</h2>
       <div className="space-y-4">
         {bookmarks.map((bookmark) => (
           <div
